@@ -1,54 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Planets fact site</title>
 </head>
 <body>
-    <header>
-        <a href="" class="logo">LOGO</a>
-        <ul>
-            <li><a href="" class="active">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Work</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-    </header>
+  <header>
+    <nav>
+      <div id="mobile-nav">
+        <div>the planets</div>
+        <div id="hamburger-container" onclick="nav()">
+          <img src="assets/icon-hamburger.svg" alt="" srcset="" >
+        </div>
+      </div>
+      <ul id="nav-list">
+        <li onclick="update(mercury)" style="--bg:#419EBB;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">Mercury</span>
+          </div>
 
-    <section>
-        <img src="images/stars.png" id="stars">
-        <img src="images/moon.png" id="moon">
-        <img src="images/mountains_behind.png" id="mountains_behind">
-        <h2 id="text">moon light</h2>
-        <a href="#sec" id="btn">Explore</a>
-        <img src="images/mountains_front.png" id="mountains_front">
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(venus)" style="--bg:#eda249;">
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">Venus</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(earth)" style="--bg:#6d2ed5;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">Earth</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(mars)" style="--bg:#d14c32;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">mars</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(jupiter)" style="--bg:#d83a34;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">jupiter</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(saturn)" style="--bg:#cd5120;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">saturn</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(uranus)" style="--bg:#1ec1a2;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">uranus</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(neptune)" style="--bg:#2d68f0;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">neptune</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+      </ul>
+
+    </nav>
+  </header>
+
+  <div id="categorie-1">
+    <p id="overview-1" class="active" onclick="updateInfo('overview',overview,overview1)">overview</p>
+    <p id="internal-1" onclick="updateInfo('structure', internal,internal1)">structure</p>
+    <p id="surface-1" onclick="updateInfo('geology', geology, geology1)">surface</p>
+  </div>
+
+  <main>
+    <section id="first-section">
+      <div id="img-container"><img src="assets/planet-earth.svg" alt="" id="image">
+      <img src="" alt="" id="zoom"></div>
+      <div id="right">
+        <div id="info">
+          <h1 id="title">Earth</h1>
+          <p id="text">Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.</p>
+          <p id="source">Source: <a href="" id="source_link" target="_blank">Wikipedia</a></p>
+        </div>
+        <div id="categorie" class="sub">
+          <p id="overview" class="active" onclick="updateInfo('overview',overview,overview1)"><span class="number">01 </span> overview</p>
+          <p id="internal" onclick="updateInfo('structure', internal,internal1)"><span class="number">02 </span> internal structure</p>
+          <p id="surface" onclick="updateInfo('geology', geology, geology1)"><span class="number">03 </span> surface geology</p>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
     </section>
-    <div class="sec" id="sec">
-        <h2>Parallax Scrolling Effects</h2>
-        <p> 
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate ut dignissimos labore ducimus similique! Tenetur, iure temporibus officiis sit tempora recusandae, nobis incidunt dolore ad possimus itaque. Repellat, saepe. Odit!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit eius, corrupti beatae minima aspernatur ut distinctio molestiae animi nihil unde accusamus neque aliquid nulla odio. Maiores mollitia fugiat dolorem.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo est ea unde molestias quod iste neque reprehenderit magnam. Maiores reiciendis saepe ab est, quaerat tenetur vero deleniti molestiae? Ex, magnam! <br><br>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate ut dignissimos labore ducimus similique! Tenetur, iure temporibus officiis sit tempora recusandae, nobis incidunt dolore ad possimus itaque. Repellat, saepe. Odit!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit eius, corrupti beatae minima aspernatur ut distinctio molestiae animi nihil unde accusamus neque aliquid nulla odio. Maiores mollitia fugiat dolorem.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo est ea unde molestias quod iste neque reprehenderit magnam. Maiores reiciendis saepe ab est, quaerat tenetur vero deleniti molestiae? Ex, magnam! <br><br>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate ut dignissimos labore ducimus similique! Tenetur, iure temporibus officiis sit tempora recusandae, nobis incidunt dolore ad possimus itaque. Repellat, saepe. Odit!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit eius, corrupti beatae minima aspernatur ut distinctio molestiae animi nihil unde accusamus neque aliquid nulla odio. Maiores mollitia fugiat dolorem.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo est ea unde molestias quod iste neque reprehenderit magnam. Maiores reiciendis saepe ab est, quaerat tenetur vero deleniti molestiae? Ex, magnam! <br><br>  
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate ut dignissimos labore ducimus similique! Tenetur, iure temporibus officiis sit tempora recusandae, nobis incidunt dolore ad possimus itaque. Repellat, saepe. Odit!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit eius, corrupti beatae minima aspernatur ut distinctio molestiae animi nihil unde accusamus neque aliquid nulla odio. Maiores mollitia fugiat dolorem.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo est ea unde molestias quod iste neque reprehenderit magnam. Maiores reiciendis saepe ab est, quaerat tenetur vero deleniti molestiae? Ex, magnam! <br><br>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate ut dignissimos labore ducimus similique! Tenetur, iure temporibus officiis sit tempora recusandae, nobis incidunt dolore ad possimus itaque. Repellat, saepe. Odit!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit eius, corrupti beatae minima aspernatur ut distinctio molestiae animi nihil unde accusamus neque aliquid nulla odio. Maiores mollitia fugiat dolorem.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo est ea unde molestias quod iste neque reprehenderit magnam. Maiores reiciendis saepe ab est, quaerat tenetur vero deleniti molestiae? Ex, magnam! <br><br>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate ut dignissimos labore ducimus similique! Tenetur, iure temporibus officiis sit tempora recusandae, nobis incidunt dolore ad possimus itaque. Repellat, saepe. Odit!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reprehenderit eius, corrupti beatae minima aspernatur ut distinctio molestiae animi nihil unde accusamus neque aliquid nulla odio. Maiores mollitia fugiat dolorem.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo est ea unde molestias quod iste neque reprehenderit magnam. Maiores reiciendis saepe ab est, quaerat tenetur vero deleniti molestiae? Ex, magnam! <br><br>    
-        </p> 
-    </div>
+
+
+
+    <section id="second-section">
+      <div class="rectangle" id="rectange1">
+        <p class="titre">rotation time</p>
+        <span id="stat1">
+          0.99 days
+        </span>
+      </div>
+
+      <div class="rectangle" id="rectange2">
+        <p class="titre">revolution time</p>
+        <span id="stat2">
+          365 days
+        </span>
+      </div>
+
+      <div class="rectangle" id="rectange3">
+        <p class="titre">radius</p>
+        <span id="stat3">
+          6,371 km
+        </span>
+      </div>
+
+      <div class="rectangle" id="rectange4">
+        <p class="titre">average temp</p>
+        <span id="stat4">
+          16C
+        </span>
+      </div>
+    </section>
+  </main>
 </body>
-<script src="index.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<script type="" src="index.js"></script>
 </html>
