@@ -1,175 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <title>Frontend Mentor | Planets fact site</title>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./TagCloud-master/dist/TagCloud.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
-<body>
-  <header>
-    <nav>
-      <div id="mobile-nav">
-        <div>the planets</div>
-        <div id="hamburger-container" onclick="nav()">
-          <img src="assets/icon-hamburger.svg" alt="" srcset="" >
+<body id="body">
+    <aside>
+        <div id="logo-box">
+            <div id="logo-container"><p id="logotext">c</p></div>
         </div>
-      </div>
-      <ul id="nav-list">
-        <li onclick="update(mercury)" style="--bg:#419EBB;"> 
-          <div class="left-mobile">
-            <div class="planet-icon"></div> <span class="planet-name">Mercury</span>
-          </div>
-
-          <div class="right-mobile">
-            <div class="arrow"></div>
-          </div>
-        </li>
-
-        <li onclick="update(venus)" style="--bg:#eda249;">
-          <div class="left-mobile">
-            <div class="planet-icon"></div> <span class="planet-name">Venus</span>
-          </div>
-
-          <div class="right-mobile">
-            <div class="arrow"></div>
-          </div>
-        </li>
-
-        <li onclick="update(earth)" style="--bg:#6d2ed5;"> 
-          <div class="left-mobile">
-            <div class="planet-icon"></div> <span class="planet-name">Earth</span>
-          </div>
-
-          <div class="right-mobile">
-            <div class="arrow"></div>
-          </div>
-        </li>
-
-        <li onclick="update(mars)" style="--bg:#d14c32;"> 
-          <div class="left-mobile">
-            <div class="planet-icon"></div> <span class="planet-name">mars</span>
-          </div>
-
-          <div class="right-mobile">
-            <div class="arrow"></div>
-          </div>
-        </li>
-
-        <li onclick="update(jupiter)" style="--bg:#d83a34;"> 
-          <div class="left-mobile">
-            <div class="planet-icon"></div> <span class="planet-name">jupiter</span>
-          </div>
-
-          <div class="right-mobile">
-            <div class="arrow"></div>
-          </div>
-        </li>
-
-        <li onclick="update(saturn)" style="--bg:#cd5120;"> 
-          <div class="left-mobile">
-            <div class="planet-icon"></div> <span class="planet-name">saturn</span>
-          </div>
-
-          <div class="right-mobile">
-            <div class="arrow"></div>
-          </div>
-        </li>
-
-        <li onclick="update(uranus)" style="--bg:#1ec1a2;"> 
-          <div class="left-mobile">
-            <div class="planet-icon"></div> <span class="planet-name">uranus</span>
-          </div>
-
-          <div class="right-mobile">
-            <div class="arrow"></div>
-          </div>
-        </li>
-
-        <li onclick="update(neptune)" style="--bg:#2d68f0;"> 
-          <div class="left-mobile">
-            <div class="planet-icon"></div> <span class="planet-name">neptune</span>
-          </div>
-
-          <div class="right-mobile">
-            <div class="arrow"></div>
-          </div>
-        </li>
-
-      </ul>
-
-    </nav>
-  </header>
-
-  <div id="categorie-1">
-    <p id="overview-1" class="active" onclick="updateInfo('overview',overview,overview1)">overview</p>
-    <p id="internal-1" onclick="updateInfo('structure', internal,internal1)">structure</p>
-    <p id="surface-1" onclick="updateInfo('geology', geology, geology1)">surface</p>
-  </div>
-
-  <main>
-    <section id="first-section">
-      <div id="img-container"><img src="assets/planet-earth.svg" alt="" id="image">
-      <img src="" alt="" id="zoom"></div>
-      <div id="right">
-        <div id="info">
-          <h1 id="title">Earth</h1>
-          <p id="text">Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.</p>
-          <p id="source">Source: <a href="" id="source_link" target="_blank">Wikipedia</a></p>
+        <div id="list">
+            <ul id="nav-list">
+                <li onclick="changePage(intro,actual_page, this)" class="active-link"><ion-icon name="home-outline"></ion-icon></li>
+                <li onclick="changePage(about,actual_page, this)"><ion-icon name="person-outline"></ion-icon></li>
+                <li onclick="changePage(skill,actual_page, this)"><ion-icon name="settings-outline"></ion-icon></li>
+                <li><ion-icon name="bulb-outline"></ion-icon></li>
+                <li><ion-icon name="eye-outline"></ion-icon></li>
+                <li><ion-icon name="mail-outline"></ion-icon></li>
+            </ul>
+            <ul id="socials">
+                <li><ion-icon name="logo-linkedin"></ion-icon></li>
+                <li><ion-icon name="logo-github"></ion-icon></li>
+                <li><ion-icon name="logo-youtube"></ion-icon></li>
+            </ul>
         </div>
-        <div id="categorie" class="sub">
-          <p id="overview" class="active" onclick="updateInfo('overview',overview,overview1)"><span class="number">01 </span> overview</p>
-          <p id="internal" onclick="updateInfo('structure', internal,internal1)"><span class="number">02 </span> internal structure</p>
-          <p id="surface" onclick="updateInfo('geology', geology, geology1)"><span class="number">03 </span> surface geology</p>
+    </aside>
+    <section id="intro-section">
+        <div id="intro">
+            <h1 id="intro-text">
+                <span>H</span><span>i</span><span>,</span> <br>
+                <span>I</span><span>'</span><span>m</span> <span>C</span><span>a</span><span>n</span><span>d</span><span>y</span> <br>
+                <span>I</span><span>'</span><span>m</span> <span>w</span><span>e</span><span>b</span><span>d</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>e</span><span>r</span> <span id="h1">&lt/h1></span>
+            </h1>
+            <p id="intro-paragraph">web developer students / proffessional lazy / techlover</p>
+            <button id="intro-button">contact me</button>
         </div>
-      </div>
+        <div id="intro-image-container">
+            <h1 id="letter">c</h1>
+        </div>
+    </section>
 
+    <section id="about-section" style="display: none;">
+        <div id="about-left">
+            <h1 id="about-title">
+                <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span> <span>M</span><span>e</span>
+            </h1>
+            <p id="about-text">
+                I'm a web developer student at the University of Applied Sciences in Salzburg. I'm currently studying web development and I'm looking for a job as a web developer. I'm also a techlover and I love to learn new technologies. <br><br>i also love to read and I'm a bookworm.
+                i also love anime and I'm a fan of the anime series "One Piece" and the anime series "Naruto".<br><br>
+                I also love to play video games and I'm a gamer since I was a little kid. 
 
+            </p>
+        </div>
 
+        <div id="spinner-container">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+            <div class="spinner">
+                <div class="face1"><img src="./assets/images/logo1.png" alt=""></div>
+                <div class="face2"><img src="./assets/images/logo2.png" alt=""></div>
+                <div class="face3"><img src="./assets/images/logo3.png" alt="" srcset="" style="transform: rotateZ(90deg);"></div>
+                <div class="face4"><img src="./assets/images/logo4.png" alt="" srcset=""></div>
+                <div class="face5"><img src="./assets/images/logo5.png" alt="" srcset=""></div>
+                <div class="face6"><img src="./assets/images/logo6.png" alt="" srcset=""></div>
+            </div>
+        </div>
+    </section>
 
+    <section id="skills-section" style="display: none;">
+        <div id="skills-left">
+            <h1 id="skills-title" class="fade-in">
+                <span>Skills</span> <span>&</span> <br>
+                <span>Knowledge</span>
+            </h1>
+            <p>
+                I'a a debutant in web developing and development in general
+                I love learn new technologies and I'm always looking for new ones.
+                even if i am new i always try to do things by myself. <br><br>
+                My favorite technologies are: <span>HTML5</span>, <span>CSS3</span>,
+                <span>Javascript</span>, <span>jQuery</span>, <span>TypeScript</span>,
+                <span>Bootstrap</span>, <span>Sass</span>, <span>Git</span>, <span>Java</span>, <span>Python</span>.
+                <br><br>
+                I'm not a designer but I have a good sense of aesthetics, and
+                experience in responsive, mobile-first web design. I put special
+                effort into optimizing my code and providing the best user
+                experience. I would love to give you any kind of support also after
+                the project's completion. I guarantee a commitment during work on
+                your project. <br><br>
+            </p>
+        </div>
 
-
-
-
-
+        <div id="sphere-container">
+            <div id="sphere" class="content"></div>
+        </div>
 
     </section>
 
-
-
-    <section id="second-section">
-      <div class="rectangle" id="rectange1">
-        <p class="titre">rotation time</p>
-        <span id="stat1">
-          0.99 days
-        </span>
-      </div>
-
-      <div class="rectangle" id="rectange2">
-        <p class="titre">revolution time</p>
-        <span id="stat2">
-          365 days
-        </span>
-      </div>
-
-      <div class="rectangle" id="rectange3">
-        <p class="titre">radius</p>
-        <span id="stat3">
-          6,371 km
-        </span>
-      </div>
-
-      <div class="rectangle" id="rectange4">
-        <p class="titre">average temp</p>
-        <span id="stat4">
-          16C
-        </span>
-      </div>
+    <section id="loader" style="display: none;">
+        <div id="loader-container">
+            <p id="loading-text">c</p>
+            <p style="letter-spacing: 2px; color: #8d8d8d; padding-top:1% ;">Please wait for the magic</p>
+            <div id="line"></div>
+        </div>
     </section>
-  </main>
 </body>
-<script type="text/javascript" src="data.js"></script>
-<script type="" src="index.js"></script>
+<script src="index.js"></script>
+<script src="sphere.js"></script>
+<script src="skills.js"></script>
+
 </html>
